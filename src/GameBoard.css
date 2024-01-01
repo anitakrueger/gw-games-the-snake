@@ -1,0 +1,115 @@
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  color: black;
+  font-size: 18px;
+}
+
+.colored {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 0.5px gray;
+}
+
+.colored:hover {
+  transform: scale(2);
+  z-index: 1;
+  box-shadow: 0 0 0 1px gray;
+}
+
+.special.special::before {
+  content: ""; /* This is required for the pseudo-element to be generated */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player-figure-0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(20%, 20%);
+  transition: all 0.5s ease-in-out;
+}
+
+.player-figure-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-20%, 20%);
+  transition: all 0.5s ease-in-out;
+}
+
+.player-figure-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 7px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(20%, -20%);
+  transition: all 0.5s ease-in-out;
+}
+
+.player-figure-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 7px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-20%, -20%);
+  transition: all 0.5s ease-in-out;
+}
+
+.player-name {
+  position: absolute;
+  align-items: center;
+  top: 20px;
+  color: white;
+  font-size: 14px;
+}
+
+.random-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  transition: transform 0.3s ease-in-out;
+}
+
+.random-field:hover {
+  transform: scale(1.2);
+}
+
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 60px;
+}
+
+@keyframes sparkle {
+  0% { color: gold; }
+  50% { color: yellow; }
+  100% { color: gold; }
+}
