@@ -41,3 +41,18 @@
   margin-top: 20px;
   font-size: 28px;
 }
+
+.logo-and-instructions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container {
+  max-width: 400px;
+}
+
+.instructions-container {
+  min-width: 200px;
+  max-width: 400px;
+  font-size: 16px;
+}

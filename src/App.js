@@ -15,7 +15,7 @@ function App() {
     setPlayers(newPlayers);
   };
 
-  const handleNameChange = (name, index) => { // New function to handle name changes
+  const handleNameChange = (name, index) => {
     const newPlayers = [...players];
     newPlayers[index].name = name;
     setPlayers(newPlayers);
@@ -38,8 +38,16 @@ function App() {
       {!gameStarted ? (
         <>
           <h1>Welcome to the Snake Game</h1>
-          <img src={logo} alt="Snake logo" />
-          <h3>Please chose the players and their color</h3>
+          <div className="logo-and-instructions">
+          <div className="logo-container">
+            <img src={logo} alt="Snake logo" />
+          </div>
+          <div className="instructions-container">
+            <h2>How to play</h2>
+            <p>Click on the white squares when it is your turn to see how many fields your player can move. A red dot on a square means the field has a special target. Hover over it to see what would happen if you land on it.</p>
+          </div>
+      </div>
+          <h3>Please chose the players (2 minimum) and their color</h3>
           <PlayerSelection 
             players={players} 
             onColorChange={handleColorChange}
@@ -49,7 +57,10 @@ function App() {
           {allColorsChosen && <StartButton onClick={() => setGameStarted(true)} />}
         </>
       ) : (
-        <GameBoard players={players} />
+        <>
+          <GameBoard players={players} />
+          <button onClick={() => setGameStarted(false)}>Choose Players</button>
+        </>
       )}
     </div>
   );
